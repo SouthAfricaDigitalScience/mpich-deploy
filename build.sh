@@ -35,5 +35,5 @@ cd ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_NUMBER}
 ../configure \
 --prefix=$SOFT_DIR-gcc-${GCC_VERSION} \
 --enable-shared \
---enable-threads=multiple \
+--enable-threads=multiple
 make -j2

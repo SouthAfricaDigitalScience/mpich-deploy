@@ -9,7 +9,7 @@ rm -rf *
 ../configure \
 --prefix=$SOFT_DIR-gcc-${GCC_VERSION} \
 --enable-shared \
---enable-threads=multiple \
+--enable-threads=multiple
 make -j2
 
 make install
