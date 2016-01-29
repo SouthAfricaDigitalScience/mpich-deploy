@@ -18,6 +18,7 @@ export F90FLAGS=
 make -j2
 
 make install
+mkdir -p modules
 (
 cat <<MODULE_FILE
 #%Module1.0
