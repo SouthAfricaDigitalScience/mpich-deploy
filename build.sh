@@ -31,7 +31,12 @@ tar -xvzf ${SRC_DIR}/${SOURCE_FILE} -C ${WORKSPACE} --skip-old-files
 mkdir ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_NUMBER}
 cd ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_NUMBER}
 # we need single precision and sse for gromacs
-#
+
+export FC=`which gfortran`
+export FCFLAGS=
+export F90=
+export F90FLAGS=
+
 ../configure \
 --prefix=$SOFT_DIR-gcc-${GCC_VERSION} \
 --enable-shared \

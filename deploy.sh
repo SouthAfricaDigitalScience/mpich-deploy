@@ -6,6 +6,11 @@ module add gcc/${GCC_VERSION}
 
 cd ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_NUMBER}
 rm -rf *
+export FC=`which gfortran`
+export FCFLAGS=
+export F90=
+export F90FLAGS=
+
 ../configure \
 --prefix=$SOFT_DIR-gcc-${GCC_VERSION} \
 --enable-shared \
