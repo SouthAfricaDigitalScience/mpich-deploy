@@ -22,6 +22,7 @@ module-whatis "$NAME $VERSION."
 setenv MPICH_VERSION $VERSION
 setenv MPICH_DIR /apprepo/$::env(SITE)/$::env(OS)/$::env(ARCH)/$NAME/$VERSION-gcc-$GCC_VERSION
 prepend-path LD_LIBRARY_PATH $::env(MPICH_DIR)/lib
+prepend-path PATH            $::env(MPICH_DIR)/bin
 prepend-path GCC_INCLUDE_DIR $::env(MPICH_DIR)/include
 MODULE_FILE
 ) > modules/${VERSION}-gcc-${GCC_VERSION}

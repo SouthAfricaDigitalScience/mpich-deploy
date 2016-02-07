@@ -32,6 +32,7 @@ module add gcc/$GCC_VERSION
 module-whatis "$NAME $VERSION."
 setenv MPICH_VERSION $VERSION
 setenv MPICH_DIR $::env(CVMFS_DIR)/$::env(SITE)/$::env(OS)/$::env(ARCH)/$NAME/$VERSION-gcc-$GCC_VERSION
+prepend-path PATH $::env(MPICH_DIR)/bin
 prepend-path LD_LIBRARY_PATH $::env(MPICH_DIR)/lib
 prepend-path GCC_INCLUDE_DIR $::env(MPICH_DIR)/include
 MODULE_FILE
