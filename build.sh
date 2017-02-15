@@ -32,7 +32,11 @@ mkdir ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_NUMBER}
 cd ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_NUMBER}
 # we need single precision and sse for gromacs
 
+# to avoid this error:
+# configure: error: F90 and F90FLAGS are replaced by FC and FCFLAGS respectively in this configure, please unset F90/F90FLAGS and set FC/FCFLAGS instead and rerun configure again.
+# Set FC , FCFLAGS
 export FC=`which gfortran`
+export FCFLAGS=
 
 ../configure \
 --prefix=$SOFT_DIR-gcc-${GCC_VERSION} \
