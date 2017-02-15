@@ -11,7 +11,7 @@ export FCFLAGS=
 export F90=
 export F90FLAGS=
 
-../configure
+../configure \
 --prefix=$SOFT_DIR-gcc-${GCC_VERSION} \
 --enable-shared \
 --enable-threads=multiple \
