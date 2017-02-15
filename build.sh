@@ -37,7 +37,8 @@ cd ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_NUMBER}
 # Set FC , FCFLAGS
 export FC=`which gfortran`
 export FCFLAGS=
-
+unset F90
+unset F90FLAGS
 ../configure \
 --prefix=$SOFT_DIR-gcc-${GCC_VERSION} \
 --enable-shared \
