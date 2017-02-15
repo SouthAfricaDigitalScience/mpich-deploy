@@ -33,12 +33,13 @@ cd ${WORKSPACE}/${NAME}-${VERSION}/build-${BUILD_NUMBER}
 # we need single precision and sse for gromacs
 
 export FC=`which gfortran`
-export FCFLAGS=
-export F90=
-export F90FLAGS=
 
 ../configure \
 --prefix=$SOFT_DIR-gcc-${GCC_VERSION} \
 --enable-shared \
---enable-threads=multiple
-make -j2
+--enable-threads=multiple \
+--enable-fortran=all \
+--enable-cxx \
+--enable-romio \
+--enable-versioning
+make

@@ -11,11 +11,15 @@ export FCFLAGS=
 export F90=
 export F90FLAGS=
 
-../configure \
+../configure
 --prefix=$SOFT_DIR-gcc-${GCC_VERSION} \
 --enable-shared \
---enable-threads=multiple
-make -j2
+--enable-threads=multiple \
+--enable-fortran=all \
+--enable-cxx \
+--enable-romio \
+--enable-versioning
+make
 
 make install
 mkdir -p modules
@@ -39,3 +43,7 @@ MODULE_FILE
 ) > modules/${VERSION}-gcc-${GCC_VERSION}
 mkdir -p ${LIBRARIES_MODULES}/${NAME}
 cp modules/${VERSION}-gcc-${GCC_VERSION} ${LIBRARIES_MODULES}/${NAME}
+
+module avail ${NAME}
+
+module add ${NAME}/${VERSION}-gcc-${GCC_VERSION}
