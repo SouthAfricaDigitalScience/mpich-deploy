@@ -41,8 +41,8 @@ prepend-path LD_LIBRARY_PATH $::env(MPICH_DIR)/lib
 prepend-path GCC_INCLUDE_DIR $::env(MPICH_DIR)/include
 MODULE_FILE
 ) > modules/${VERSION}-gcc-${GCC_VERSION}
-mkdir -p ${LIBRARIES_MODULES}/${NAME}
-cp modules/${VERSION}-gcc-${GCC_VERSION} ${LIBRARIES_MODULES}/${NAME}
+mkdir -p ${COMPILERS}/${NAME}
+cp modules/${VERSION}-gcc-${GCC_VERSION} ${COMPILERS}/${NAME}
 
 module avail ${NAME}
 
